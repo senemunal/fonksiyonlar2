@@ -1,0 +1,137 @@
+# 1.soru katma değer ciro #
+
+def giderHesapla(hammaddeMaliyeti, bakimonarimGiderleri, sevkiyatGiderleri, satinalinanhizmetGiderleri):
+    global giderler
+    giderler=hammaddeMaliyeti+bakimonarimGiderleri+sevkiyatGiderleri+satinalinanhizmetGiderleri
+    return  giderler
+def kdciroHesapla(toplamsatisMiktari, giderler):
+    kdciro=toplamsatisMiktari-giderler
+    if(kdciro>1000):
+        print("İşletme Katma Değer Cirosu Yüksek")
+    elif(500<kdciro<999):
+        print("İşletme Katma Değer Cirosu Normal")
+    else:
+        print("İşletme Katma Değer Cirosu Düşük")
+
+#ACTİON
+print("Lütfen Giderlerinizi Giriniz")
+hammaddeMaliyeti=int(input("Hammadde Maliyeti:"))
+bakimonarimGiderleri=int(input("Bakım Onarım Giderleriniz:"))
+sevkiyatGiderleri=int(input("Sevkiyat Giderleriniz:"))
+satinalinanhizmetGiderleri=int(input("Satın Alınan Hizmet Giderleriniz:"))
+print("Lütfen Toplam Satış Miktarınızı Giriniz")
+toplamsatisMiktari=int(input("Toplam Satış Miktarı:"))
+
+giderler=giderHesapla(hammaddeMaliyeti,bakimonarimGiderleri,sevkiyatGiderleri,satinalinanhizmetGiderleri)
+kdciro=kdciroHesapla(toplamsatisMiktari,giderler)
+
+  ###2.soru müşterilerle çalışma süresi ###
+  
+  def mustericalismaSuresi2016(CalisilanSure2016,toplamMusteriSayisi2016):
+    global  mustericalisma2016
+    mustericalisma2016=CalisilanSure2016/toplamMusteriSayisi2016
+    return mustericalisma2016
+def  mustericalismaSuresi2017(CalisilanSure2017,toplamMusteriSayisi2017):
+    global mustericalisma2017
+    mustericalisma2017=CalisilanSure2017/toplamMusteriSayisi2017
+    return mustericalisma2017
+CalisilanSure2016=150
+toplamMusteriSayisi2016=50
+CalisilanSure2017=CalisilanSure2016+50
+toplamMusteriSayisi2017=toplamMusteriSayisi2016+20
+
+def farkHesapla(mcs2017,mcs2016):
+    global fark
+    fark=mcs2017-mcs2016
+    print("2017-2016 yılları arasında müşteri çalışma süresi farkı:",fark)
+
+mcs2016= mustericalismaSuresi2016(CalisilanSure2016,toplamMusteriSayisi2016)
+mcs2017= mustericalismaSuresi2017(CalisilanSure2017,toplamMusteriSayisi2017)
+farkHesapla(mcs2017,mcs2016)
+
+###3.soru karlılık ###
+
+def ilk6aylikGelir(yazilimGeliri,finansmanGeliri,urunsatisGeliri):
+    global ilktoplamGelir
+    ilktoplamGelir=yazilimGeliri+finansmanGeliri+urunsatisGeliri
+    return ilktoplamGelir
+def ilk6aylikGider(calisanMaaslari,kiraGideri,donaniMaliyeti):
+    global ilktoplamGider
+    ilktoplamGider=calisanMaaslari+kiraGideri+donaniMaliyeti
+    return ilktoplamGider
+def son6aylikGelir(son6yazilimGeliri,sponsorlukGeliri,eticaretGeliri,son6urunsatisGeliri):
+    global sontoplamGelir
+    sontoplamGelir=son6yazilimGeliri+sponsorlukGeliri+eticaretGeliri+son6urunsatisGeliri
+    return sontoplamGelir
+def son6aylikGider(son6calisanMaaslari,son6kiraGideri,bakiMaliyeti):
+    global son6aylikGider
+    son6aylikGider=son6calisanMaaslari+son6kiraGideri+bakiMaliyeti
+    return son6aylikGider
+def ilk6aylikKarHesapla(ilkGelir,ilkGider):
+    ilk6aylikKar=ilkGelir-ilkGider
+    return ilk6aylikKar
+def son6aylikKarHesapla(sonGelir,sonGider):
+    son6aylikKar=sonGelir-sonGider
+    return son6aylikKar
+def farkHesapla(sonKar,ilkKar):
+    fark=sonKar-ilkKar
+    if(fark>5000):
+        print("İşletme çok karlı")
+    elif(1000<fark<5000):
+        print("İşletme karı normal")
+    else:
+        print("İşletme karı düşük")
+
+print("Lütfen ilk 6 aylık gelirlerinizi giriniz")
+yazilimGeliri=int(input("Yazılım Geliriniz:"))
+finansmanGeliri=int(input("Finansman Geliriniz:"))
+urunsatisGeliri=int(input("Ürün Satış Geliriniz:"))
+print("Lütfen ilk 6 aylık giderlerinizi giriniz")
+calisanMaaslari=int(input("Çalışan Maaşları:"))
+kiraGideri=int(input("Kira Gideriniz:"))
+donaniMaliyeti=int(input("Donanım Maliyeti:"))
+
+print("Lütfen son 6 aylık gelirlerinizi giriniz")
+son6yazilimGeliri=int(input("Yazılım Geliriniz:"))
+sponsorlukGeliri=int(input("Sponsorluk Geliriniz:"))
+eticaretGeliri=int(input("E-ticaret Geliriniz:"))
+son6urunsatisGeliri=int(input("Ürün Satış Geliriniz:"))
+print("Lütfen son 6 aylık giderlerinizi giriniz")
+son6calisanMaaslari=int(input("Çalışan Maaşları:"))
+son6kiraGideri=int(input("Kira Gideriniz:"))
+bakiMaliyeti=int(input("Bakım Maliyeti:"))
+
+
+ilkGelir=ilk6aylikGelir(yazilimGeliri,finansmanGeliri,urunsatisGeliri)
+ilkGider=ilk6aylikGider(calisanMaaslari,kiraGideri,donaniMaliyeti)
+ilk6aylikKarHesapla(ilkGelir,ilkGider)
+
+sonGelir=son6aylikGelir(son6yazilimGeliri,sponsorlukGeliri,eticaretGeliri,son6urunsatisGeliri)
+sonGider=son6aylikGider(son6calisanMaaslari,son6kiraGideri,bakiMaliyeti)
+son6aylikKarHesapla(sonGelir,sonGider)
+
+sonKar = son6aylikKarHesapla(sonGelir, sonGider)
+ilkKar = ilk6aylikKarHesapla(ilkGelir, ilkGider)
+fark=farkHesapla(sonKar,ilkKar)
+
+###4.soru  ortalama stok ###
+
+def dbasiStokHesaplama(koltukSayisi,yatakSayisi,dolapSayisi):
+    global dbasiStok
+    dbasiStok=koltukSayisi+yatakSayisi+dolapSayisi
+    return dbasiStok
+def dsonuStokHesaplama(koltukSayisi,yatakSayisi,dolapSayisi):
+    global dsonuStok
+    dsonuStok=(koltukSayisi-15)+(yatakSayisi-5)+(dolapSayisi-5)
+    return dsonuStok
+def ortStokHesaplama(dbasiStok,dsonuStok):
+    ortStok=(dbasiStok+dsonuStok)/2
+    print("Ortalama stok değeriniz:",ortStok)
+
+koltukSayisi=int(input("Koltuk Sayısını giriniz: "))
+yatakSayisi=int(input("Yatak Sayısını giriniz: "))
+dolapSayisi=int(input("Dolap Sayısını giriniz: "))
+
+dbasiStok=dbasiStokHesaplama(koltukSayisi,yatakSayisi,dolapSayisi)
+dsonuStok=dsonuStokHesaplama(koltukSayisi,yatakSayisi,dolapSayisi)
+ortStokHesaplama(dbasiStok,dsonuStok)
